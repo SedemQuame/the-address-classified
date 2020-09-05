@@ -16,6 +16,9 @@ if(!process.env.MODE){
     }
 }
 
+console.log(process.env.MODE);
+console.log(process.env.AFROPRINT_DB_PASSWORD);
+
 // ========================================== custom packages  ========================================== //
 const db = require(`./config/db.config`);
 // instantiating new express app
@@ -74,7 +77,7 @@ app.use(function(request, response){
 });
 
 // listen for changes on a given port number
-const portNumber = ( process.env.PORT || 3000 );
+const portNumber = (process.env.PORT || 3000 );
 http.createServer(app).listen(portNumber, function(){
     console.log(`Classified address app started on port ${portNumber}`);
     console.log(`http://localhost:3000/`);
