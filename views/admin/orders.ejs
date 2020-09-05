@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<%- include('./../partials/head')%>
+
+    <body>
+        <!--================Header Menu Area =================-->
+        <%- include('./../partials/admin_nav', {name: "Orders"})%>
+
+            <%- include('./../partials/empty', {msg: "No orders have been made yet."})%>
+
+                <%- include('./../partials/orders')%>
+
+
+                    <%- include("./../partials/scripts.ejs") %>
+
+    </body>
+
+</html>
