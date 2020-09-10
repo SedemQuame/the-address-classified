@@ -4,7 +4,11 @@ exports.checkout = (request, response, next) => {
 };
 
 exports.cart = (request, response, next) => {
-    response.render('cart');
+    response.render('./shop/cart.views.ejs');
+};
+
+exports.wishlist = (request, response, next) => {
+    response.render('./shop/wishlist.views.ejs');
 };
 
 exports.terms = (request, response, next) => {
@@ -24,5 +28,5 @@ exports.managers = (request, response, next) => {
 };
 
 exports.show = (request, response, next) => {
-    response.render('contact');
+    response.render('./shop/contact.views.ejs');
 };

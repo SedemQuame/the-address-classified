@@ -1,0 +1,59 @@
+<%- include('../superPartials/head.partials.ejs')%>
+
+    <!-- Page Preloder -->
+    <%- include('../superPartials/preloader.partials.ejs')%>
+    <!-- Page Preloder -->
+
+    <!-- Offcanvas Menu Begin -->
+    <%- include('../superPartials/canvas.partials.ejs')%>
+    <!-- Offcanvas Menu End -->
+
+    <!-- Header Section Begin -->
+    <%- include("../superPartials/nav")%>
+    <!-- Header Section End -->
+
+    <!-- Login Section Begin -->
+    <div class="row">
+      <div class="col-12 offset-sm-1 col-sm-10 offset-md-4 col-md-4">
+        <div class="card">
+          <h5 class="card-header info-color white-text text-center py-4">
+            <strong>Log in</strong>
+          </h5>
+          <!--Card content-->
+          <div class="card-body px-lg-5 pt-0">
+            <!-- Form -->
+            <form class="text-left" style="color: #757575;margin-top: 15px;" action="#!">
+              <!-- Email -->
+              <div class="md-form">
+                <label for="materialLoginFormEmail">E-mail</label>
+                <input type="email" id="materialLoginFormEmail" class="form-control">
+              </div>
+              <!-- Password -->
+              <div class="md-form">
+                <label for="materialLoginFormPassword">Password</label>
+                <input type="password" id="materialLoginFormPassword" class="form-control">
+              </div>
+              <!-- Sign in button -->
+              <a class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" href="/dashboard">Sign in</a>              <div class="text-center">
+                <!-- Forgot password -->
+                <a href="/forgotPassword">Forgot password?</a>
+              </div>
+            </form>
+            <!-- Form -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Login Section End -->
+
+    <!-- Search Begin -->
+    <%- include("../superPartials/search.partials.ejs"); %>
+    <!-- Search End -->
+
+    <!-- Script Section Begin -->
+    <%- include("../superPartials/scripts"); %>
+    <!-- Script Section End -->
+
+  </body>
+
+  </html>

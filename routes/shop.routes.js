@@ -10,6 +10,9 @@ module.exports = app => {
     app.route(`/checkout`)
        .get(shop.checkout);
 
+   app.route(`/wishlist`)
+       .get(shop.wishlist);
+
     app.route(`/cart`)
        .get(shop.cart);   
        
@@ -32,10 +35,10 @@ module.exports = app => {
        .get(collection.show); 
    
    app.get(`/shop`, (req, res) => {
-      res.render(`./../views/shop.ejs`);
+      res.render(`./../views/shop/shop.views.ejs`);
    });
 
    app.get(`/shop/:category`, (req, res) => {
-      res.render(`./../views/shop.ejs`);
+      res.render(`./../views/shop/shop.views.ejs`);
    });
 };

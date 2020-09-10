@@ -12,6 +12,6 @@ module.exports = app => {
        .get(product.getSingleProduct);
 
     app.get(`/product-details/`, (req, res) => {
-        res.render(`./../views/productDetails.ejs`);
+        res.render(`./product/productDetails.views.ejs`);
     });
 };

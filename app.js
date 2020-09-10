@@ -17,7 +17,7 @@ if(!process.env.MODE){
 }
 
 console.log(process.env.MODE);
-console.log(process.env.AFROPRINT_DB_PASSWORD);
+console.log(process.env.CLASSIFIED_DB_RW_PASSWORD);
 
 // ========================================== custom packages  ========================================== //
 const db = require(`./config/db.config`);
@@ -62,18 +62,20 @@ require(`./routes/product.routes`)(app);
 require(`./routes/orders.routes`)(app);
 require(`./routes/shop.routes`)(app);
 require(`./routes/blog.routes`)(app);
+require(`./routes/super.routes`)(app);
+
 
 // creating some routes
-app.all(`/`, function(request, response){
-    response.render(`index`);
+app.all(`/`, function(req, res){
+    res.render(`index.views.ejs`);
 });
 
 // serving public files
 const publicPath = path.resolve(__dirname, `public`);
 app.use(express.static(publicPath));
 
-app.use(function(request, response){
-    response.end(`404`);
+app.use(function(req, res){
+    res.end(`404`);
 });
 
 // listen for changes on a given port number

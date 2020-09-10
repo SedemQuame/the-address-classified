@@ -1,0 +1,51 @@
+<%- include('../superPartials/head.partials.ejs')%>
+
+    <!-- Page Preloder -->
+    <%- include('../superPartials/preloader.partials.ejs')%>
+    <!-- Page Preloder -->
+
+    <!-- Offcanvas Menu Begin -->
+    <%- include('../superPartials/canvas.partials.ejs')%>
+    <!-- Offcanvas Menu End -->
+
+    <!-- Header Section Begin -->
+    <%- include("../superPartials/nav")%>
+    <!-- Header Section End -->
+
+    <!-- Breadcrumb Begin -->
+    <div class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__links">
+                        <a href="./index.html"><i class="fa fa-home"></i> Home</a>
+                        <span>Shop</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+    <!-- Shop Section Begin -->
+    <section class="shop spad">
+        <div class="container">
+            <div class="row">
+                <%- include("./partials/sidebar.partials.ejs"); %>
+
+                <%- include("./partials/productList.partials.ejs"); %>
+            </div>
+        </div>
+    </section>
+    <!-- Shop Section End -->
+
+    <!-- Search Begin -->
+    <%- include("../superPartials/search.partials.ejs"); %>
+    <!-- Search End -->
+
+    <!-- Footer Section Begin -->
+    <%- include("../superPartials/footer"); %>
+    <!-- Footer Section End -->
+    </body>
+
+    </html>
