@@ -6,14 +6,14 @@ module.exports = app => {
        .get(admin.login);
 
     // view routes
-   app.route(`/view/products`)
-       .get(admin.view);
+   app.route(`/finances`)
+       .get(admin.finances);
        
     // creating routes
-   app.route(`/add/products`)
-       .get(admin.add);
+   app.route(`/products`)
+       .get(admin.products);
        
     // creating routes
    app.route(`/orders`)
-       .get(admin.orders);   
+       .get(admin.orders);
 };

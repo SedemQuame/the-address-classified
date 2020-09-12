@@ -16,9 +16,6 @@ if(!process.env.MODE){
     }
 }
 
-console.log(process.env.MODE);
-console.log(process.env.CLASSIFIED_DB_RW_PASSWORD);
-
 // ========================================== custom packages  ========================================== //
 const db = require(`./config/db.config`);
 // instantiating new express app
@@ -27,7 +24,6 @@ const app = express();
 // ========================================== app's global variable  ==================================== //
 // const appName = 'Address Classfied';
 // app.set("appName", appName);
-
 
 
 // serving static files in express

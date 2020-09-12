@@ -3,14 +3,18 @@ exports.login = (request, response, next) => {
     response.render('admin/login');
 };
 
-exports.view = (request, response, next) => {
-    response.render('admin/vproduct');
+exports.finances = (request, response, next) => {
+    response.render('admin/finances');
 };
 
-exports.add = (request, response, next) => {
-    response.render('admin/aproduct', {msg: null});
+exports.products = (request, response, next) => {
+    response.render('admin/product', {msg: null});
 };
 
 exports.orders = (request, response, next) => {
     response.render('admin/orders');
+};
+
+exports.finances = (request, response, next) => {
+    response.render('admin/finance');
 };

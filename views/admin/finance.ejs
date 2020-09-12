@@ -1,0 +1,11 @@
+<%-include(`./partials/head.partials.ejs`)%>
+
+<div class="wrapper">
+    <%-include(`./partials/nav/sidebar.partials.ejs`)%>
+    <div class="main-panel">
+        <%-include(`./partials/nav/top.partials.ejs`, {title: `Finances`})%>
+        <%-include(`./partials/finance.partials.ejs`, {title: `Finances`})%>
+    </div>
+</div>
+
+<%- include('./partials/footer.partials.ejs')%>
