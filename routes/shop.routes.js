@@ -32,10 +32,32 @@ module.exports = app => {
       .get(shop.show); 
 
    app.route(`/collection`)
-       .get(collection.show); 
+       .get(collection.show);
+
+   app.get(`/shop/:category/:item`, (req, res) => {
+      // res.json({
+      //    category: req.params.category,
+      //    item: req.params.item
+      // })
+
+      // gather data relating to the given values passed here.
+
+      // render page, with received data.
+      res.render(`./../views/shop/shop.views.ejs`, {
+         category: req.params.category,
+         item: req.params.item,
+         data: [],
+         displayCategories: true
+      });
+   }); 
    
    app.get(`/shop`, (req, res) => {
-      res.render(`./../views/shop/shop.views.ejs`);
+      res.render(`./../views/shop/shop.views.ejs`, {
+         category: "",
+         item: "",
+         data: [],
+         displayCategories: false
+      });
    });
 
    app.get(`/shop/:category`, (req, res) => {

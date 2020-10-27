@@ -1,6 +1,6 @@
 // jshint esversion:7
 exports.checkout = (request, response, next) => {
-    response.render('checkout');
+    response.render('./shop/checkout.views.ejs');
 };
 
 exports.cart = (request, response, next) => {
