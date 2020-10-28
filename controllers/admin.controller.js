@@ -1,4 +1,7 @@
 // jshint esversion:7
+// requiring admin models.
+const product = require(`./../models/product.models`);
+
 exports.login = (request, response, next) => {
     response.render('admin/login');
 };
@@ -8,7 +11,18 @@ exports.finances = (request, response, next) => {
 };
 
 exports.products = (request, response, next) => {
-    response.render('admin/product', {msg: null});
+    // get all product information.
+    product.find().then(products => {
+        response.render('admin/product', {
+            msg: null,
+            products: products,
+        });
+    }).catch((err) => {
+        response.render('admin/product', {
+            msg: `Unable to create products.`,
+            products: [],
+        });
+    });
 };
 
 exports.orders = (request, response, next) => {

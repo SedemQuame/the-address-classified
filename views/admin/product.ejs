@@ -4,7 +4,10 @@
     <%-include(`./partials/nav/sidebar.partials.ejs`)%>
     <div class="main-panel">
         <%-include(`./partials/nav/top.partials.ejs`, {title: `Products`})%>
-        <%-include(`./partials/product.partials.ejs`, {title: `Products`})%>
+        <%-include(`./partials/product.partials.ejs`, {
+            title: `Products`,
+            products: products
+        })%>
     </div>
 </div>
 

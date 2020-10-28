@@ -32,7 +32,7 @@ app.set("views", viewPath);
 app.set("view engine", "ejs");
 
 // adding the morgan logger to middleware
-app.use(morgan(`dev`));
+// app.use(morgan(`dev`));
 
 // adding middleware to express
 app.use(bodyParser.urlencoded({extended: false}));

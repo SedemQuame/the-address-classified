@@ -10,7 +10,8 @@
             <div class="card-body">
                 <%- include('./menu.partials.ejs') %>
                 <div class="row">
-                    <div class="col-12 col-md-4">
+                  <% products.forEach(product => { %>
+                    <a class="col-12 col-md-4" href="./productInfo/<%= product._id %>">
                         <div class="card">
                             <div class="card-body" style="
                                 padding-left: 0px;
@@ -21,49 +22,14 @@
                                 <img style="height: 360px; width: 100%;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQMAAADCCAMAAAB6zFdcAAAAA1BMVEU3Nzeu5Mv0AAAASElEQVR4nO3BMQEAAADCoPVPbQwfoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIC3AcUIAAFkqh/QAAAAAElFTkSuQmCC" alt="">
                                 <div class="product__item__text text-center">
                                     <h6>
-                                        <a href="./productInfo/prod-id">Product Name</a>
+                                        <%= product.name %>
                                     </h6>
-                                    <p class="product__price">Price</p>
+                                    <p class="product__price"><%= product.price %></p>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <div class="card">
-                            <div class="card-body" style="
-                                padding-left: 0px;
-                                padding-right: 0px;
-                                padding-top: 0px;
-                                padding-bottom: 0px;
-                            ">
-                                <img style="height: 360px; width: 100%;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQMAAADCCAMAAAB6zFdcAAAAA1BMVEU3Nzeu5Mv0AAAASElEQVR4nO3BMQEAAADCoPVPbQwfoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIC3AcUIAAFkqh/QAAAAAElFTkSuQmCC" alt="">
-                                <div class="product__item__text text-center">
-                                    <h6>
-                                        <a href="./productInfo/prod-id">Product Name</a>
-                                    </h6>
-                                    <p class="product__price">Price</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <div class="card">
-                            <div class="card-body" style="
-                                padding-left: 0px;
-                                padding-right: 0px;
-                                padding-top: 0px;
-                                padding-bottom: 0px;
-                            ">
-                                <img style="height: 360px; width: 100%;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQMAAADCCAMAAAB6zFdcAAAAA1BMVEU3Nzeu5Mv0AAAASElEQVR4nO3BMQEAAADCoPVPbQwfoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIC3AcUIAAFkqh/QAAAAAElFTkSuQmCC" alt="">
-                                <div class="product__item__text text-center">
-                                    <h6>
-                                        <a href="./productInfo/prod-id">Product Name</a>
-                                    </h6>
-                                    <p class="product__price">Price</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </a>
+                  <% }) %>
                 </div>
             </div>
           </div>

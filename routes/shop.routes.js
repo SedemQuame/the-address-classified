@@ -53,7 +53,7 @@ module.exports = app => {
    
    app.get(`/shop`, (req, res) => {
       res.render(`./../views/shop/shop.views.ejs`, {
-         category: "",
+         category: ``,
          item: "",
          data: [],
          displayCategories: false
@@ -61,6 +61,11 @@ module.exports = app => {
    });
 
    app.get(`/shop/:category`, (req, res) => {
-      res.render(`./../views/shop/shop.views.ejs`);
+      res.render(`./../views/shop/shop.views.ejs`, {
+         category: `${req.params.category}'s`,
+         item: "",
+         data: [],
+         displayCategories: true
+      });
    });
 };
