@@ -44,7 +44,7 @@ module.exports = app => {
 
       // render page, with received data.
       res.render(`./../views/shop/shop.views.ejs`, {
-         category: req.params.category,
+         category: `${req.params.category}'s`,
          item: req.params.item,
          data: [],
          displayCategories: true

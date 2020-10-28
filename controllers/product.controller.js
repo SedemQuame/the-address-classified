@@ -16,7 +16,8 @@ exports.createProduct = (req, res, next) => {
         // designerId: req.body.,
         username: spawn.spawn(),
     }).then(() => {
-        res.render(`./../views/admin/aproduct.ejs`, {msg: `Product profile created successfully.`});
+        // res.render(`./../views/admin/product.ejs`, {msg: `Product profile created successfully.`});
+        res.redirect(`/admin/products`)
     }).catch((err) => {
         console.log(err);
         res.end(`Could not create product profile.`);

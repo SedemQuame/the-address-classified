@@ -48,7 +48,7 @@ const connectDB = async () => {
         console.log(`Err: ${err}`);
     });
 };
-// connectDB();
+connectDB();
 
 //====================================== registering required routes ========================================//
 require(`./routes/admin.routes`)(app);

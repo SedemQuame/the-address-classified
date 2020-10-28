@@ -1,7 +1,7 @@
 <ul class="nav nav-pills nav-pills-primary" role="tablist">
     <li class="nav-item">
         <button class="btn btn-sm btn-outline-primary btn-round" data-toggle="modal" data-target="#newProduct">
-            New Product
+            Create Product
         </button>
     </li>
 </ul>
@@ -11,7 +11,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="newProductTitle">New Product</h5>
+                <h5 class="modal-title" id="newProductTitle">Create Product</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -19,104 +19,101 @@
         <div class="modal-body">
             <div class="row">
                 <div class="col-12">                            
-                    <form class="row" action="/createProduct" method="post" novalidate="novalidate">
+                    <form class="row" action="/createProduct" method="post"> <!-- novalidate="novalidate"-->
                         <div class="col-md-12">
-                            <h3>Product Details</h3>
+                            <p class="text-center">Product Information</p>
                         </div>
                         <div class="col-md-12">
                             <div class="md-form form-group">
-                                <input type="text" class="form-control" id="productName" name="productName">
+                                <div class="fileinput fileinput-new text-center" data-provides="fileinput">
+                                    <div class="fileinput-new thumbnail">
+                                        <img style="height: 180px;" class="rounded" src="http://style.anu.edu.au/_anu/4/images/placeholders/person_8x10.png" rel="nofollow" alt="...">
+                                    </div>
+                                    <div class="fileinput-preview fileinput-exists thumbnail"></div>
+                                </div>
+                                <p class="text-muted text-center">Product Image(s)</p>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="md-form form-group">
+                                <input type="text" class="form-control" id="productName" name="productName" required>
                                 <label for="productName">Product Name</label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="md-form form-group">
-                                <input type="text" class="form-control" id="productCategory" name="productCategory">
+                                <input type="text" class="form-control" id="productCategory" name="productCategory" required>
                                 <label for="productCategory">Product Category</label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="md-form form-group">
-                                <input type="text" class="form-control" id="productBrand" name="productBrand">
+                                <input type="text" class="form-control" id="productBrand" name="productBrand" required>
                                 <label for="productBrand">Product Brand</label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="md-form form-group">
-                                <input type="text" class="form-control" id="productColor" name="productColor">
+                                <input type="text" class="form-control" id="productColor" name="productColor" required>
                                 <label for="productColor">Primary Color</label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="md-form form-group">
-                                <input type="number" min="1" class="form-control" id="productPrice" name="productPrice">
+                                <input type="number" min="1" class="form-control" id="productPrice" name="productPrice" required>
                                 <label for="productPrice">Price</label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="md-form form-group">
-                                <input type="text" class="form-control" id="availableSizes" name="availableSizes">
+                                <input type="text" class="form-control" id="availableSizes" name="availableSizes" required>
                                 <label for="availableSizes">Available sizes</label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="md-form form-group">
-                                <input type="number" min="1" class="form-control" id="productQuantity" name="productQuantity">
+                                <input type="number" min="1" class="form-control" id="productQuantity" name="productQuantity" required>
                                 <label for="productQuantity">Product quantity</label>
                             </div>
+                        </div>
+                        <div class="col-md-12">
+                            <!-- <label for="availableSizes">Product Image</label>
+                            <br> -->
+                            <input type="file" name="" id="" requiredd>
                         </div>
                         <div class="col-md-12">
                             <div class="md-form form-group">
                                 <textarea class="form-control" id="description" name="description" row="5" placeholder="Product description"></textarea>
                             </div>
                         </div>
+
                         <div class="col-md-12">
-                            <div class="md-form form-group">
-                                <p class="text-muted">Product Images</p>
-                                <div class="fileinput fileinput-new text-center" data-provides="fileinput">
-                                    <div class="fileinput-new thumbnail">
-                                        <img style="height: 180px;" class="rounded" src="http://style.anu.edu.au/_anu/4/images/placeholders/person_8x10.png" rel="nofollow" alt="...">
-                                    </div>
-                                    <div class="fileinput-preview fileinput-exists thumbnail"></div>
-                                    <div>
-                                        <span class="btn btn-raised btn-round btn-default btn-file">
-                                            <span class="fileinput-new">Select image</span>
-                                            <span class="fileinput-exists">Change</span>
-                                            <input id="file" type="file" name="productImage" />
-                                        </span>
-                                        <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>
-                                    </div>
-                                </div>
-                                <!-- <input type="file" class="form-control"   required> -->
-                            </div>
-                        </div>
-                        <!-- <div class="col-md-12">
-                            <h3>Designer Details</h3>
+                            <p class="text-center">Designer Information</p>
                         </div>
                         <div class="col-md-12">
                             <div class="md-form form-group">
-                                <input type="text" class="form-control" id="designerName" name="designerName">
+                                <input type="text" class="form-control" id="designerName" name="designerName" required>
                                 <label for="designerName">Designer Name</label>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="md-form form-group">
-                                <input type="email" class="form-control" id="designerEmail" name="designerEmail">
+                                <input type="email" class="form-control" id="designerEmail" name="designerEmail" required>
                                 <label for="designerEmail">Email</label>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="md-form form-group">
-                                <input type="tel" class="form-control" id="designerNumber" name="designerNumber">
+                                <input type="tel" class="form-control" id="designerNumber" name="designerNumber" required>
                                 <label for="designerNumber">Phone</label>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="md-form form-group">
-                                <input type="text" class="form-control" id="location" name="location">
+                                <input type="text" class="form-control" id="location" name="location" required>
                                 <label for="designerLocation">Location</label>
                             </div>
-                        </div> -->
+                        </div>
                         <div class="col-6">
                             <input multiple class="btn btn-primary btn-block" type="submit" value="Submit">
                         </div>
