@@ -32,3 +32,12 @@ exports.orders = (request, response, next) => {
 exports.finances = (request, response, next) => {
     response.render('admin/finance');
 };
+
+exports.productDetails = (request, response, next) => {
+    // display product information for CRUD manipulation'
+    product.findById(request.params.productId).then(product => {
+        response.render(`admin/productDetails.ejs`, {product});
+    }).catch(err => {
+        response.render(`admin/productDetails.ejs`)
+    });
+};

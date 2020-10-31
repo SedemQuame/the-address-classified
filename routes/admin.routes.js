@@ -17,7 +17,6 @@ module.exports = app => {
     app.route(`/admin/orders`)
         .get(admin.orders);
 
-    app.get(`admin/productInfo/:prod-id`, (req, res) => {
-        // display product information for CRUD manipulation
-    });
+    app.route(`/admin/productInfo/:productId`)
+        .get(admin.productDetails);
 };

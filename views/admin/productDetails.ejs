@@ -1,0 +1,14 @@
+<%-include(`./partials/head.partials.ejs`)%>
+
+<div class="wrapper">
+    <%-include(`./partials/nav/sidebar.partials.ejs`)%>
+    <div class="main-panel">
+        <%-include(`./partials/nav/top.partials.ejs`, {title: `Products Details`})%>
+        <%-include(`./partials/details.partials.ejs`, {
+            title: `Product Details`,
+            product
+        })%>
+    </div>
+</div>
+
+<%- include('./partials/footer.partials.ejs')%>
