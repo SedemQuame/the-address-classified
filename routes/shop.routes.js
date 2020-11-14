@@ -51,14 +51,8 @@ module.exports = app => {
       });
    }); 
    
-   app.get(`/shop`, (req, res) => {
-      res.render(`./../views/shop/shop.views.ejs`, {
-         category: ``,
-         item: "",
-         data: [],
-         displayCategories: false
-      });
-   });
+   app.route(`/shop`)
+      .get(shop.displayProducts);
 
    app.get(`/shop/:category`, (req, res) => {
       res.render(`./../views/shop/shop.views.ejs`, {

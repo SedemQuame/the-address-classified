@@ -77,6 +77,5 @@ app.use(function(req, res){
 // listen for changes on a given port number
 const portNumber = (process.env.PORT || 3000 );
 http.createServer(app).listen(portNumber, function(){
-    console.log(`Classified address app started on port ${portNumber}`);
     console.log(`http://localhost:3000/`);
 });

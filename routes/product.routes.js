@@ -5,13 +5,16 @@ module.exports = app => {
     app.route(`/createProduct`)
         .post(product.createProduct);
 
-    app.route(`/getProductsByFilter/:filter/:value`)
+    app.route(`/product/update`)
+        .post(product.update);
+
+    app.route(`/filter-products/:filter/:value`)
         .get(product.getAllProductsByFilter);
 
-    app.route(`/productDetails/:product_id`)
+    app.route(`/product-details/:_id`)
        .get(product.getSingleProduct);
 
-    app.get(`/product-details/`, (req, res) => {
-        res.render(`./product/productDetails.views.ejs`);
+    app.get(`/product-details`, (req, res) => {
+        res.render(`./product/product.views.ejs`);
     });
 };

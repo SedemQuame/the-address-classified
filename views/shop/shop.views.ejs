@@ -39,7 +39,7 @@
             <div class="row">
                 <%- include("./partials/sidebar.partials.ejs"); %>
 
-                <%- include("./partials/productList.partials.ejs"); %>
+                <%- include("./partials/productList.partials.ejs", {products: data}); %>
             </div>
         </div>
     </section>

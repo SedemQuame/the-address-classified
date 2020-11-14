@@ -8,7 +8,77 @@
               <p class="card-category">Product Details</p>
             </div>
             <div class="card-body">
-                <%= product %>
+                <div class="card">
+                  <!-- this should be a carousel. -->
+                  <img class="card-img-top" src="https://images.unsplash.com/photo-1517303650219-83c8b1788c4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bd4c162d27ea317ff8c67255e955e3c8&auto=format&fit=crop&w=2691&q=80" rel="nofollow" alt="Card image cap">
+                  <br>
+                  <form action="/product/update" method="POST">
+                    <div class="col-md-12">
+                      <br>
+                      <div class="col-md-12">
+                        <p class="text-center">Product Details</p>
+                      </div>
+                      <br>
+                      <%= product %>
+                      <input type="hidden" id="productId" name="_id" required value="<%= product._id %>">
+                      <div class="md-form form-group">
+                        <input type="text" class="form-control" id="productName" name="name" required value="<%= product.name %>">
+                        <label for="productName">Product Name</label>
+                      </div>
+                      <div class="md-form form-group">
+                        <input type="text" class="form-control" id="productCategory" name="category" required value="<%= product.category %>">
+                        <label for="productCategory">Product Category</label>
+                      </div>
+                      <div class="md-form form-group">
+                        <input type="text" class="form-control" id="productBrand" name="brand" required value="<%= product.brand %>">
+                        <label for="productBrand">Product Brand</label>
+                      </div>
+                      <div class="md-form form-group">
+                        <input type="text" class="form-control" id="productColor" name="color" required value="<%= product.color %>">
+                        <label for="productColor">Primary Color</label>
+                      </div>
+                      <div class="md-form form-group">
+                        <input type="text" class="form-control" id="productPrice" name="price" required value="<%= product.price %>">
+                        <label for="productPrice">Price</label>
+                      </div>
+                      <div class="md-form form-group">
+                        <input type="text" class="form-control" id="availableSizes" name="size" required value="<%= product.quantity %>">
+                        <label for="availableSizes">Available sizes</label>
+                      </div>
+                      <div class="md-form form-group">
+                        <input type="text" class="form-control" id="productQuantity" name="quantity" required value="<%= product.quantity %>">
+                        <label for="productQuantity">Product quantity</label>
+                      </div>
+                      <div class="md-form form-group">
+                        <label for="productQuantity">Product description</label>
+                        <textarea class="form-control" id="description" name="description" col="10" row="10" required value="<%= product.description %>"></textarea>
+                      </div>
+                      <br>
+                      <div class="col-md-12">
+                          <p class="text-center">Designer Details</p>
+                      </div>
+                      <br>
+                      <div class="md-form form-group">
+                          <input type="text" class="form-control" id="designerName" name="designerName" required>
+                          <label for="designerName">Designer Name</label>
+                      </div>                    
+                      <div class="md-form form-group">
+                          <input type="email" class="form-control" id="designerEmail" name="designerEmail" required>
+                          <label for="designerEmail">Email</label>
+                      </div>                    
+                      <div class="md-form form-group">
+                          <input type="tel" class="form-control" id="designerNumber" name="designerNumber" required>
+                          <label for="designerNumber">Phone</label>
+                      </div>                    
+                      <div class="md-form form-group">
+                          <input type="text" class="form-control" id="location" name="location" required>
+                          <label for="designerLocation">Location</label>
+                      </div>
+                      <br>
+                      <input class="btn btn-primary btn-block" type="submit" value="Update">
+                  </form>
+                  <br>
+                </div>
             </div>
           </div>
         </div>

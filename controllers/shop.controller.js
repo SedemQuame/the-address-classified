@@ -1,3 +1,6 @@
+const { response } = require("express");
+const product = require(`./../models/product.models`);
+
 // jshint esversion:7
 exports.checkout = (request, response, next) => {
     response.render('./shop/checkout.views.ejs');
@@ -29,4 +32,22 @@ exports.managers = (request, response, next) => {
 
 exports.show = (request, response, next) => {
     response.render('./shop/contact.views.ejs');
+};
+
+exports.displayProducts = (request, response, next) => {
+    product.find({}).then(products => {
+        response.render(`./../views/shop/shop.views.ejs`, {
+            category: ``,
+            item: "",
+            data: products,
+            displayCategories: false
+        });
+    }).catch(err => {
+        response.render(`./../views/shop/shop.views.ejs`, {
+            category: ``,
+            item: "",
+            data: [],
+            displayCategories: false
+        });
+    });
 };
